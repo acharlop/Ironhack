@@ -15,6 +15,6 @@ class Car
 		puts "Now visiting #{city}"
 	end
 	def view_visited_cities
-		puts "This car has been to #{@cities.join(", ")}"
+		puts "This car has been to #{@cities.join(", ").rindex}"
 	end
 end
