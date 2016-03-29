@@ -12,4 +12,4 @@ ted = MultiPaymentEmployee.new("ted","ted@doyoureallyexist.com",60000,275,55)
 ]
 
 weekly_salary = Payroll.new(employees)
-weekly_salary.calculate_payroll
+weekly_salary.pay_employees
