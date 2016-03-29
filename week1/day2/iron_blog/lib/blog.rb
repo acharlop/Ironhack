@@ -9,7 +9,6 @@ class Blog
 	end
 	def add_post(article)
 		@posts.push(article)
-		@last_page = (@posts.length / @posts_per_page.to_f).ceil
 	end
 	def print_post(article)
 		if article.sponsered?
@@ -41,6 +40,11 @@ class Blog
 		ending = start + @posts_per_page - 1
 		publish_page(start, ending, true)
 	end
+	def get_first_page
+		@posts.sort_by!{|p| p.date}.reverse!
+		@last_page = (@posts.length / @posts_per_page.to_f).ceil
+		get_page
+	end
 	def is_first_page?
 		@page == 1 ? true : false
 	end
@@ -48,13 +52,17 @@ class Blog
 		@page == @last_page ? true : false
 	end
 	def next_page
-		if !is_last_page?
+		if is_last_page?
+			puts "You have made a grave mistake. Please check your logic, or are you a robot?"
+		else
 			@page +=1
 		end
 		get_page
 	end
 	def previous_page
-		if !is_first_page?
+		if is_first_page?
+			puts "You have made a grave mistake. Please check your logic, or are you a robot?"
+		else
 			@page -= 1
 		end
 		get_page
