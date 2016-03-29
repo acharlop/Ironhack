@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+.drop {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop(ev) {
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+    ev.preventDefault();
+}
+</script>
+</head>
+<body>
+<center>
+<form>
+	<input type="text" placeholder="Name" draggable="true" ondragstart="drag(event)">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name"><br>
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name"><br>
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name"><br>
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name"><br>
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name">
+	<input type="text" placeholder="Name"><br>
+	<input type="submit">
+</form>
+</center>
+<center>
+	
+<div class="drop" id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<p id="drag1" draggable="true" >This is a draggable paragraph. Drag this element into the rectangle.</p>
+
+</body>
+</html>
