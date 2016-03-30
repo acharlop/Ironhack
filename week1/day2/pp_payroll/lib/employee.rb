@@ -16,7 +16,7 @@ class HourlyEmployee < Employee
 	 	@hours_worked = hours_worked
 	end
 	def calculate_salary
-		hourly_pay(@hourly_rate, @hours_worked)
+		hourly_pay
 	end
 end
 
@@ -27,19 +27,20 @@ class SalaryEmployee < Employee
 	 	@salary_rate = salary_rate
 	 end
 	def calculate_salary
-		salary_pay(@salary_rate)
+		salary_pay
 	end
 end
 
 class MultiPaymentEmployee < SalaryEmployee
 	include HourlyPay
 	include SalaryPay
-	def initialize(name, email, salary_rate, hourly_rate, hours_worked)
+	def initialize(name, email, salary_rate, hourly_rate, hours)
 	 	super(name, email, salary_rate)
 	 	@hourly_rate = hourly_rate
-	 	@hours_worked = hours_worked
+	 	@hours = hours
+	 	@hours_worked = hours > 40 ? hours - 40 : 0
 	 end
 	def calculate_salary
-		salary_pay(@salary_rate) + @hours_worked > 40 ? @hourly_rate * (@hours_worked - 40) : 0)
+		salary_pay + hourly_pay
 	end
 end

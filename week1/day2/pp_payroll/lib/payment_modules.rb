@@ -1,11 +1,11 @@
 module HourlyPay
-	def hourly_pay(rate, hours)
-		rate * hours
+	def hourly_pay
+		@hourly_rate * @hours_worked
 	end
 end
 
 module SalaryPay
-	def salary_pay(rate)
-		rate / 52
+	def salary_pay
+		@salary_rate / 52
 	end
 end
