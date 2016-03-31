@@ -8,10 +8,12 @@ class WordChain
 
 	def find_chain(start_word,end_word)
 		if start_word.length != end_word.length
+			puts "Words need to be of equal length"
 			return
 		end
 		@start_word = start_word.dup
-		@end_word = end_word.dup
+		puts @start_word
+		@end_word = end_word
 		start = start_word.dup
 
 		@start_word.length.times do
@@ -20,19 +22,6 @@ class WordChain
 				return
 			end
 		end
-
-		for p in (0..@start_word.length) do
-			for letter in ("a".."z") do
-				start[p] = letter
-				@start_word.length.times do
-					start = try_word(start,0)
-					if start == @end_word
-						return
-					end
-				end				
-			end
-		end
-
 	end
 
 	def try_word(start,i)
@@ -41,7 +30,7 @@ class WordChain
 		else
 			test = start.dup
 			test[i] = @end_word[i]
-			if @dict.exists?(test) #&& @end_word[i] != start[i]
+			if @dict.exists?(test) && @end_word[i] != start[i]
 				start = test
 				puts start
 			end
