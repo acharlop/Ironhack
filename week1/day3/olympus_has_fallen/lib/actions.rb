@@ -1,5 +1,5 @@
 class Action
-	def initialize(action = "Look around", response = "There is nothing to see here")
+	def initialize(action = "look", response = "This used to be a majestic building, how did things get so bad?")
 		@action = action
 		@response = response
 	end
