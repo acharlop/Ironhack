@@ -3,7 +3,7 @@ require_relative "lib/wordcount.rb"
 
 puts "Enter your credentials to login"
 
-login = Login.new
+login = Login.new("user","passwd")
 
 while !login.logged_in?
 	print "Username: "

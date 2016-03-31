@@ -1,7 +1,7 @@
 class Login
-	def initialize()
-		@username = "avicharls"
-		@password = "ruby123"
+	def initialize(username,password)
+		@username = username
+		@password = password
 		@logged_in = false
 	end
 	def login(username, password)
