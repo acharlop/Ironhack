@@ -6,6 +6,7 @@ require_all "lib"
 my_chain = WordChain.new("/usr/share/dict/words")
 
 while true
+	puts '"exit now" to quit'
 	print "word1: "
 	word_one = gets.chomp
 	if word_one == "exit now"
