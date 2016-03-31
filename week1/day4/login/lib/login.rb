@@ -3,7 +3,6 @@ class Login
 		@username = "avicharls"
 		@password = "ruby123"
 		@logged_in = false
-		@attempt = 0
 	end
 	def login(username, password)
 		@logged_in = (@username == username && @password == password)
