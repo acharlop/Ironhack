@@ -1,0 +1,265 @@
+---
+oval: !ruby/object:Room
+  directions:
+    n: cent_hall_e
+    s: balcony
+    e: treaty
+  description: Yellow Oval Room
+  error: Of the important decissions made in the room, that was not one of them
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+cent_hall_e: !ruby/object:Room
+  directions:
+    n: hall_north
+    s: oval
+    e: grand_stair
+    w: cent_hall_w
+  description: Center Hall East
+  error: If you got here you must be repenting for a past life
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+cent_hall_w: !ruby/object:Room
+  directions:
+    s: sit_priv
+    e: cent_hall_e
+    w: sitting_w
+  description: Center Hall West
+  error: Good thinking running into the 1 wall in a massive hall
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+balcony: !ruby/object:Room
+  directions:
+    n: oval
+  description: Truman Balcony
+  error: 50 cal shells rip through the concrete around you
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: I told you to move your ass!
+      game_over: true
+      prompt: "Don't \e[0;31;49mlook\e[0m around for long or you will get shot!"
+kitchen: !ruby/object:Room
+  directions:
+    e: dining
+  description: Kitchen
+  error: Just time for a quick bite before getting back to saving the world
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+dressing: !ruby/object:Room
+  directions:
+    e: pres_bed
+  description: Dressing Room
+  error: With only one exit you better hope they don't walk through that door
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+dining: !ruby/object:Room
+  directions:
+    s: sitting_w
+    w: kitchen
+  description: Presidents Dining Room
+  error: Wow saving the world makes me hungry!
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+pres_bed: !ruby/object:Room
+  directions:
+    n: sitting_w
+    e: sit_priv
+    w: dressing
+  description: Presidents Bedroom
+  error: When he snoozes the whole world looses, hey you guys have something in common!
+    Come on get back in the fight
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+sitting_w: !ruby/object:Room
+  directions:
+    n: dining
+    s: pres_bed
+    e: cent_hall_w
+  description: West Sitting Hall
+  error: Just sitting for a second...OH I get it sitting ina sitting room. NOT FUNNY
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+sit_priv: !ruby/object:Room
+  directions:
+    n: cent_hall_w
+    w: pres_bed
+  description: Private Sitting Room
+  error: You are stuck where Monica L su... woops forgot there are kids here
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+west: !ruby/object:Room
+  directions:
+    e: hall_north
+  description: West Room
+  error: Wondering why they couldn't come up for a better name for the place your
+    going to die in?
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+east: !ruby/object:Room
+  directions:
+    w: hall_north
+  description: East Room
+  error: East and West rooms? Hey at least they are consistent in this hall. Unlike
+    anywhere else in the building or country
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+treaty: !ruby/object:Room
+  directions:
+    w: oval
+  description: Treaty Room
+  error: There are still some more bad treaties to be made! If you find your way out
+    you can help get that road on the show!
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+grand_stair: !ruby/object:Room
+  directions:
+    e: sitting_e
+    w: cent_hall_e
+  description: Grand Stairs
+  error: Is this the stairway to heaven?
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+sitting_e: !ruby/object:Room
+  directions:
+    n: queens_bed
+    s: lincoln_bed
+    w: grand_stair
+  description: East Sitting Hall
+  error: Waiting around for...?
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+lincoln_bed: !ruby/object:Room
+  directions:
+    n: sitting_e
+    e: sit_linc
+  description: Lincoln Bedroom
+  error: Time for a quick snooze, hey Mr. Abe hows the air up there?
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+queens_bed: !ruby/object:Room
+  directions:
+    s: sitting_e
+    e: sit_queen
+  description: Queens Bedroom
+  error: Wonder which lucky queen got this room. Or was it a nickname for a past president?
+    Remind me to look that up later
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+sit_queen: !ruby/object:Room
+  directions:
+    w: queens_bed
+  description: Queen's Sitting Room
+  error: Are there any two that say laziness more then sitting and queen?
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+sit_linc: !ruby/object:Room
+  directions:
+    w: lincoln_bed
+  description: Lincoln Sitting Room
+  error: Now there's a hard working chap who needs to take a load off
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"
+hall_north: !ruby/object:Room
+  directions:
+    s: cent_hall_e
+    e: east
+    w: west
+  description: North Hall
+  error: It's not cold in here? Ohhhh we're in the North "Hall". Never mind
+  actions:
+    look: !ruby/object:Action
+      action: look
+      response: This used to be a majestic building, how did things get so bad?
+      game_over: false
+      prompt: "There might be something interesting around here lets take a \e[0;34;49mlook\e[0m
+        around"

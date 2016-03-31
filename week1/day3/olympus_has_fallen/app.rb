@@ -1,4 +1,5 @@
 require "require_all"
+require "yaml"
 require_all "lib"
 
 oval_err = "Of the important decissions made in the room, that was not one of them"
@@ -108,9 +109,13 @@ all_rooms = {
 	"hall_north"	=> 	Room.new(hall_north_desc	,hall_north_err		,hall_north_dirs	,hall_north_acts	)
 }
 
+# File.open('default.yml','w') do |out|
+# 	YAML.dump(all_rooms, out)
+# end
 
+rooms = YAML.load_file("default.yml")
 system "clear"
-game = Game.new(all_rooms)
+game = Game.new(rooms)
 puts "Enter x to exit at any time"
 
 game.start_game("oval")
