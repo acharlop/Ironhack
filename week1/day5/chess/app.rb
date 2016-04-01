@@ -56,3 +56,18 @@ puts "validate : " << qn.move?(3,7).to_s
 puts "validate : " << qn.move?(5,6).to_s
 puts "validate : " << qn.move?(6,5).to_s
 puts "validate : " << qn.move?(8,7).to_s
+bp = Pawn.new(7,2,:black)
+wp = Pawn.new(2,2,:black)
+puts
+puts
+puts "black pawn test"
+puts "validate no move bp " << bp.move?(7,2).to_s
+puts "validate bp " << bp.move?(5,2).to_s
+puts "validate bp " << bp.move?(3,2).to_s
+puts "validate bp " << bp.move?(7,3).to_s
+puts "white pawn test"
+puts "validate no move wp " << wp.move?(2,2).to_s
+puts "validate wp " << wp.move?(4,2).to_s
+puts "validate wp " << wp.move?(6,2).to_s
+puts "validate wp " << wp.move?(2,3).to_s
+

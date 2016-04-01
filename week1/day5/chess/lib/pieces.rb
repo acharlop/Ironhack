@@ -61,4 +61,26 @@ class Queen < Piece
 			false
 		end
 	end
-end		
+end
+
+class Pawn < Piece
+	def initialize(row,col,color)
+		super
+		@moved = false
+	end
+	def move?(n_row,n_col)
+		if (super && !@moved) && (@col == n_col && (@row - n_row).abs.between?(1,2))
+			@moved = true
+			true
+		elsif (super && @moved) && (@col == n_col && (@row - n_row).abs == 1)
+			true
+		else
+			false
+		end
+	end
+end
+
+				
+
+
+
