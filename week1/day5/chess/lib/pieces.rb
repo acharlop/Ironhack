@@ -42,3 +42,23 @@ class Bishop < Piece
 		end
 	end
 end			
+
+class Knight < Piece
+	def move?(n_row,n_col)
+		if super && ((@row - n_row).abs + (@col - n_col).abs == 3)
+			true
+		else
+			false
+		end
+	end
+end	
+
+class Queen < Piece
+	def move?(n_row,n_col)
+		if super && (((@row - n_row).abs == (@col - n_col).abs) || (@row == n_row || @col == n_col))
+			true
+		else
+			false
+		end
+	end
+end		
