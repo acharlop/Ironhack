@@ -32,3 +32,13 @@ class King < Piece
 		end
 	end
 end
+
+class Bishop < Piece
+	def move?(n_row,n_col)
+		if super && ((@row - n_row).abs == (@col - n_col).abs)
+			true
+		else
+			false
+		end
+	end
+end			
