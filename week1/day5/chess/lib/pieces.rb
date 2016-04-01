@@ -11,6 +11,13 @@ class Piece
 			true
 		end
 	end
+	def move(row,col)
+		@row = row
+		@col = col
+	end
+	def name
+		@color.to_s[0].downcase + self.class.to_s[0].upcase
+	end
 end
 
 class Rook < Piece
@@ -69,6 +76,10 @@ class Pawn < Piece
 		@moved = false
 	end
 	def move?(n_row,n_col)
+		p @row
+		p @col
+		p n_row
+		p n_col
 		if (super && !@moved) && (@col == n_col && (@row - n_row).abs.between?(1,2))
 			@moved = true
 			true
