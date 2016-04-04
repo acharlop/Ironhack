@@ -27,8 +27,17 @@ RSpec.describe "Task class testing" do
 		expect(@task.content).to eq "ABC"
 	end
 	it "Task created_at to within 1 minute" do
-		now = Time.now.strftime "%Y-%m-%d %H:%M %z"
+		time = Time.now 
+		now = time.strftime "%Y-%m-%d %H:%M %z"
 		expect(@task.created_at.strftime "%Y-%m-%d %H:%M %z").to eq (now)
 	end
-
+	it "Task created with no updated_at time" do
+		expect(@task.updated_at).to be_nil
+	end
+	it "Task updated to within 1 minute" do
+		@task.update_content("ABCD")
+		time = Time.now 
+		now = time.strftime "%Y-%m-%d %H:%M %z"
+		expect(@task.updated_at.strftime "%Y-%m-%d %H:%M %z").to eq (now)
+	end
 end

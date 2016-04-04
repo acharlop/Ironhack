@@ -1,5 +1,5 @@
 class Task
-	attr_reader :content, :id, :created_at
+	attr_reader :content, :id, :created_at, :updated_at
 	@@current_id = 1
 	def initialize(content)
 		@content = content
@@ -7,6 +7,7 @@ class Task
 		@@current_id += 1
 		@completed = false
 		@created_at = Time.now
+		@updated_at = nil
 	end
 	def complete?
 		@completed
@@ -19,5 +20,6 @@ class Task
 	end
 	def update_content(content)
 		@content = content
+		@updated_at = Time.now
 	end
 end
