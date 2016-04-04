@@ -1,7 +1,12 @@
+require 'yaml/store'
+require_relative "save_modules.rb"
 class ToDoList
+	include ToDoStorage
 	attr_reader :tasks
-	def initialize
+	def initialize(username)
+		@todo_store = YAML::Store.new("./public/tasks.yml")
 		@tasks = []
+		@username = username
 	end
 	def add_task(task)
 		@tasks.push(task)
@@ -9,7 +14,7 @@ class ToDoList
 	def find_task_by_id(n)
 		tasks.find{|t| t.id == n}
 	end
-	def delete_task(n)
+	def delete_task!(n)
 		task = find_task_by_id(n)
 		@tasks.delete_if{|t| t == task}
 	end
@@ -25,4 +30,5 @@ class ToDoList
 	def sort(sort_by)
 		@tasks.sort_by{|task| task.send(sort_by)}
 	end
+
 end

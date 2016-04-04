@@ -22,4 +22,7 @@ class Task
 		@content = content
 		@updated_at = Time.now
 	end
+	def attrs
+    instance_variables.map{|ivar| instance_variable_get ivar}
+  end
 end
