@@ -9,5 +9,5 @@ movies = File.readlines("lib/movies.txt")
 
 list = ImAscii.new(movies)
 
-list.print_rating
-list.print_movies
+# list.print_rating
+# list.print_movies
