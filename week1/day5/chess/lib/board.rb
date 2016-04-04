@@ -54,7 +54,7 @@ class Board
 		p piece
 		if !piece
 			err.add("No piece at coordinates " << start_c.to_s )
-			return
+			return 
 		end
 		if !on_board?(end_c)
 			err.add(end_c.to_s << " is not on the board")
