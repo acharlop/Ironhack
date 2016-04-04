@@ -1,6 +1,7 @@
 class StringCalculator
 	def add(str)
-		nums = str.split(",")
-		nums.inject(0){|s,i| s += i.to_i}
+		str.split(",")
+			.map(&:to_i)
+			.reduce(0,:+)
 	end
 end
