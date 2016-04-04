@@ -1,4 +1,5 @@
 class Piece
+	attr_reader :color
 	def initialize(row,col,color)
 		@row = row
 		@col = col
@@ -17,6 +18,9 @@ class Piece
 	end
 	def name
 		@color.to_s[0].downcase + self.class.to_s[0].upcase
+	end
+	def teamate?(piece)
+		@color == piece.color
 	end
 end
 
@@ -52,7 +56,7 @@ end
 
 class Knight < Piece
 	def move?(n_row,n_col)
-		if super && ((@row - n_row).abs + (@col - n_col).abs == 3)
+		if super && (((@row - n_row).abs == 2 && (@col - n_col).abs == 1) || ((@row - n_row).abs == 1 && (@col - n_col).abs == 2))
 			true
 		else
 			false

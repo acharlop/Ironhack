@@ -1,0 +1,8 @@
+1) calculate dx,dy before each move calc
+dx = (n_x - x).abs
+dy = (n_y - y).abs
+if dx == dy ......
+
+2) add direction_correct and amount_of_spaces methods for pawn
+-- so color can't move backwards
+

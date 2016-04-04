@@ -48,27 +48,27 @@
   moved: false
 :d2: !ruby/object:Pawn
   row: 2
-  col: 8
+  col: 4
   color: :white
   moved: false
 :e2: !ruby/object:Pawn
   row: 2
-  col: 4
+  col: 5
   color: :white
   moved: false
 :f2: !ruby/object:Pawn
   row: 2
-  col: 5
+  col: 6
   color: :white
   moved: false
 :g2: !ruby/object:Pawn
   row: 2
-  col: 6
+  col: 7
   color: :white
   moved: false
 :h2: !ruby/object:Pawn
   row: 2
-  col: 7
+  col: 8
   color: :white
   moved: false
 :a3: 
