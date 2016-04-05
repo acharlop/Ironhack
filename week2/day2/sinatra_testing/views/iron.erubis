@@ -1,0 +1,12 @@
+require
+<? if Date.today.monday? ?>
+	<p>
+		Izzy Ironside is <strong>NOT</strong>
+		a fan of Mondays like today.
+	</p>
+
+<? end ?>
+<p>
+	Izzy Ironside was born on
+	<?= Date.today ?>
+</p>

@@ -1,0 +1,10 @@
+<% time =  %>
+<p>
+	The time 
+	<% if @direction == "ago" %>
+		was
+	<% else %>
+		will be
+	<% end %>	
+		<%= (Time.now + @time_diff).strftime("%A - %l:%-M %p") %>	
+</p>
