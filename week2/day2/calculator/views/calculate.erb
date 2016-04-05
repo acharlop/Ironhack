@@ -1,0 +1,29 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Calculator</title>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<form action="/" method="POST">
+	  <input type="number" name="first_number" placeholder="1st number" required><br />
+	  <input type="number" name="second_number" placeholder="2nd number" required><br />
+	  <button type="submit" name="method" value="addition">+</button>
+	  <button type="submit" name="method" value="subtract">-</button>
+	  <button type="submit" name="method" value="multiply">*</button>
+	  <button type="submit" name="method" value="divide">/</button>
+	</form>
+
+	<h2>
+		<% if @answer && !@answer.nil? %>
+			<%= @params[:first_number] %>
+			<%= @sign %>
+			<%= @params[:second_number] %>
+			=
+			<%= @answer %>
+		<% elsif @answer == false %>
+			Division by zero is not allowed
+		<% end %>
+	</h2>
+</body>
+</html>
