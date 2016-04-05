@@ -9,8 +9,8 @@ end
 
 post "/" do
 	@params = params
-	a = params[:first_number].to_i
-	b = params[:second_number].to_i
+	a = params[:first_number].to_f
+	b = params[:second_number].to_f
 	@answer = calc.send params[:method], a, b 
 	@sign = calc.sign(params[:method])
 	erb(:calculate)
