@@ -4,12 +4,13 @@ class PasswordChecker
 		@email = ''
 	end
 	def check_password(email, password)
-		@password = password.scan(/\S+/).join("")
+		@password = password
 		@email = email
 		# tests
 		length_check &&
 		one_of_each_check &&
 		name_domain_check
+
 	end
 
 	private
