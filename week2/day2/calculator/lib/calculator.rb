@@ -18,13 +18,13 @@ class Calculator
 	def sign(method)
 		case method
 			when "addition"
-				"+"
+				"++"
 			when "subtract" 
-				"-"
+				"--"
 			when "multiply"
-				"*"
+				"**"
 			when "divide"
-				"/"
+				"//"
 			else
 				"That opperation isn't recognized"
 		end
