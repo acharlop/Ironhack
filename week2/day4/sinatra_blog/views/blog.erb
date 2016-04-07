@@ -1,0 +1,19 @@
+<ul>
+<% @posts.each_with_index do |post,index| %>
+	<li>
+		<a href="/post/<%= index %>"><%= post.title %></a>
+	</li>
+<% end %>
+</ul>
+<br>
+<p>
+	<a href="/new_post">Add Post</a>
+</p>
+<form action="/author" method="POST" >
+	<input type="text" name="author" placeholder="Author name">
+	<button type="submit">By Author</button>
+</form>
+<form action="/category" method="POST" >
+	<input type="text" name="category" placeholder="category name">
+	<button type="submit">By Category</button>
+</form>

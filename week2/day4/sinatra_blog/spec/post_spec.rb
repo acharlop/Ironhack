@@ -7,6 +7,8 @@ describe Post do
 		Timecop.freeze
 		@title = "This is the post title"
 		@text = "This should be a really long text string"
+    @author = "me"
+    @category = "nothing special"
 		@post = Post.new(@title, @text)
 	end
 	after(:each) do
@@ -26,6 +28,24 @@ describe Post do
     end
     it 'does not return the post title' do
     	expect(@post.text).to_not eq @title
+    end
+  end
+  describe '#author' do
+    it 'defaults to na' do
+      expect(@post.author).to eq "na"
+    end
+    it 'can be specified' do
+      tmp_post = Post.new(@title, @text,@author,@category)
+      expect(tmp_post.author).to eq @author
+    end
+  end
+  describe '#category' do
+    it 'defaults to none' do
+      expect(@post.category).to eq "none"
+    end
+    it 'can be specified' do
+      tmp_post = Post.new(@title, @text,@author,@category)
+      expect(tmp_post.category).to eq @category
     end
   end
   describe '#date' do

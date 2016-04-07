@@ -1,0 +1,92 @@
+---
+blog:
+- !ruby/object:Post
+  title: title2
+  text: text2
+  date: 2016-04-07 19:42:10.360092000 -04:00
+  author: na
+  category: none
+- !ruby/object:Post
+  title: title3
+  text: 'asdf asdf sdf asdf '
+  date: 2016-04-07 19:45:26.151358000 -04:00
+  author: ''
+  category: ''
+- !ruby/object:Post
+  title: title4
+  text: test
+  date: 2016-04-07 19:47:19.684641000 -04:00
+  author: avi
+  category: special
+- !ruby/object:Post
+  title: special text 1
+  text: text2
+  date: 2016-04-07 19:42:10.360092000 -04:00
+  author: na
+  category: none
+- !ruby/object:Post
+  title: title3
+  text: 'asdf asdf sdf asdf '
+  date: 2016-04-07 19:45:26.151358000 -04:00
+  author: 'avi'
+  category: 'something'
+- !ruby/object:Post
+  title: title4
+  text: test
+  date: 2016-04-07 19:47:19.684641000 -04:00
+  author: avi
+  category: special
+- !ruby/object:Post
+  title: special text 2
+  text: text2
+  date: 2016-03-025 19:42:10.360092000 -04:00
+  author: na
+  category: none
+- !ruby/object:Post
+  title: title3
+  text: 'asdf asdf sdf asdf '
+  date: 2016-04-01 19:45:26.151358000 -04:00
+  author: 'avi'
+  category: 'something'
+- !ruby/object:Post
+  title: title4
+  text: test
+  date: 2016-04-02 19:47:19.684641000 -04:00
+  author: avi
+  category: special
+- !ruby/object:Post
+  title: special text 3
+  text: text2
+  date: 2016-04-03 19:42:10.360092000 -04:00
+  author: na
+  category: none
+- !ruby/object:Post
+  title: title3
+  text: 'asdf asdf sdf asdf '
+  date: 2016-04-04 19:45:26.151358000 -04:00
+  author: 'avi'
+  category: 'something'
+- !ruby/object:Post
+  title: title4
+  text: test
+  date: 2016-04-05 19:47:19.684641000 -04:00
+  author: avi
+  category: special
+- !ruby/object:Post
+  title: special text 4
+  text: text2
+  date: 2016-04-06 19:42:10.360092000 -04:00
+  author: na
+  category: none
+- !ruby/object:Post
+  title: title3
+  text: 'asdf asdf sdf asdf '
+  date: 2016-03-23 19:45:26.151358000 -04:00
+  author: 'avi'
+  category: 'something'
+- !ruby/object:Post
+  title: title4
+  text: test
+  date: 2016-03-24 19:47:19.684641000 -04:00
+  author: avi
+  category: special
