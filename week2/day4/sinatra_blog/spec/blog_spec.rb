@@ -6,6 +6,7 @@ require "rspec"
 describe Blog do
 	before(:each) do
 		@blog = Blog.new
+		@post3 = Post.new("title3","text3")
 		@post1 = Post.new("title1","text1")
 		@post2 = Post.new("title2","text2")
 	end
@@ -30,6 +31,17 @@ describe Blog do
 	  	expect(@blog.posts).to eq([@post1,@post2])
 	  	expect(@blog.posts.length).to eq(2)
 		end
+	end
+	describe '#latest_posts' do
+	  it 'returns array of posts by creation time' do
+	  	@blog.add_post @post1
+	  	@blog.add_post @post3
+	  	expect(@blog.latest_posts).to eq [@post3,@post1]
+	  	post = Post.new("title","text")
+	  	@blog.add_post post
+	  	@blog.add_post @post2
+	  	expect(@blog.latest_posts).to eq [@post3,@post1,@post2,post]
+	  end
 	end
   
 end
