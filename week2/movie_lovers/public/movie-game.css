@@ -1,7 +1,10 @@
 img {
 	width: 150px;
 	height: 200px;
+	border: 3px solid black;
+	margin: 0px;
 }
 img:hover {
 	cursor: pointer;
+	border: 3px solid green;
 }

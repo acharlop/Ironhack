@@ -1,9 +1,13 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="<%= url("movie-game.css") %>">
 </head>
+<h1>Which one was filmed in <%= @year %>?</h1>
 <% @movie_list.each_with_index do |movie,idx| %>
-	<img src="<%= movie[:poster] %>" id="<%= idx %>">
-	<% if idx % 3 == 0 %>
+	<% alert = (idx == @winner ? "Yay!" : "Nope") %>
+	<img src="<%= movie[:poster] %>" id="<%= idx %>" onClick="alert('<%= alert %>')">
+	
+
+	<% if (idx + 1) % 3 == 0 %>
 		<br>
 	<% end %>
 <% end %>
