@@ -2,11 +2,14 @@ require "sinatra"
 require "sinatra/reloader"
 require_relative "lib/post.rb"
 require_relative "lib/blog.rb"
+include Module: WillPaginate::Sinatra::Helpers
+WillPaginate.per_page = 10
 blog = Blog.new
 blog.load
 
 get '/' do
-	@posts = blog.latest_posts
+	@posts = WillPaginate::Post.paginate(blog.latest_posts)
+	# @posts.paginate(:page => params[:page, :per_page => 30])
 	erb(:blog)
 end
 

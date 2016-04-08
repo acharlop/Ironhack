@@ -1,15 +1,18 @@
 require "yaml/store"
 class Blog
-	attr_reader :posts
+	attr_reader :posts, :total_pages
 	def initialize
 		@posts = []
 		@blog_store = YAML::Store.new "./lib/blog.yml"
+		@total_pages = @posts.length
+		@per_page = 10
+		# @blog_store = YAML::Store.new "./blog.yml"
 	end
 	def add_post(post)
 		@posts.push(post)
 	end
 	def latest_posts
-		@posts.sort_by{|p| p.date}
+		@posts.sort_by{|post| post.date}
 	end
 	def by_author(author)
 		arr = latest_posts

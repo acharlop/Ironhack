@@ -1,3 +1,4 @@
+require "will_paginate"
 class Post
 	attr_reader :title, :text, :date, :author, :category
 	def initialize(title,text,author="na",category="none")
