@@ -1,4 +1,20 @@
-<h1><%= @user %></h1>
+<h1><%= @user.capitalize %> Task List</h1>
+<ul>
+<% @todo_list.each do |task| %>
+	
+	<li><a href="/task/<%= task.id %>"><%= task.content %></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; 
+		<% if task.updated_at.nil? %>
+			created: <%= task.created_at.strftime("%l:%-M %P %-m/%-d/%y ") %>
+		<% else %>
+			updated: <%= task.updated_at.strftime("%l:%-M %P %-m/%-d/%y ") %>
+		<% end %>
+	</li>
+<% end %>
+</ul>
+
+<form action="/new_task" method="post">
+	<button type="submit">Add Task</button>
+</form>
 <form action="/logout" method="post">
 	<button type="submit">Logout</button>
 </form>
