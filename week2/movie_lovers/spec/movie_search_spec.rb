@@ -22,7 +22,7 @@ describe MovieSearch do
     		expect(@movies.list.sample[:poster].match URI.regexp("http")).to_not be_nil
       end
       it 'year' do
-      	expect(@movies.list.sample[:release_date]).to be_between(1900,Time.now.year).inclusive
+      	expect(@movies.list.sample[:year]).to be >= 1888 #first movie on imdb
       end
     end
   end

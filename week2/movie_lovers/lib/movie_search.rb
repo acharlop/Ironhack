@@ -1,7 +1,7 @@
 require "imdb"
 # require_relative "imdb_movie.rb"
 class MovieSearch
-	attr_reader :list
+	attr_reader :list, :type
 	def initialize(search,type)
 		@search = Imdb::Search.new(search).movies
 		@list = []
@@ -9,7 +9,7 @@ class MovieSearch
 		build_list
 	end
 	def build_list
-		@search[0..9].each do | movie|
+		@search[0..8].each do | movie|
 			poster = movie.poster
 			if poster
 				game_keys = self.send(@type, movie)
@@ -21,6 +21,6 @@ class MovieSearch
 		end
 	end
 	def year(movie)
-		[:release_date, (movie.title[/\(([0-9]{4})\)$/,1].to_i)]
+		[:year, movie.year]
 	end
 end
