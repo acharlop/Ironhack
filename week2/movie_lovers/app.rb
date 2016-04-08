@@ -11,12 +11,9 @@ get "/play" do
 end
 
 post "/play" do
-	# 13.1
-	# now = Time.now
 	movies = MovieSearch.new(params[:search],params[:type])
-	@movie_list = movies.list
-	@winner = (0..@movie_list.length-1).to_a.sample
-	@year = @movie_list[@winner][:year]
-	# p Time.now - now
+	@movie_list = movies.list.shuffle!
+	@winner = movies.winner
+	@prompt = movies.prompt
 	erb(:play)
 end
