@@ -1,0 +1,78 @@
+body {
+	background-image: url("https://trello-backgrounds.s3.amazonaws.com/53baf533e697a982248cd73f/4200x4200/48dbf0b5a546541e847e267a5dcd2201/shutterstock_134707556.jpg");
+	color: white;
+}
+#header-logo{
+	background-image: url("https://d78fikflryjgj.cloudfront.net/images/50b4ebc64391dc394a38e73aed57f0e2/header-logo.png");
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 30px;
+}
+.nav a, .white {
+	color: white;
+}
+.black {
+	color: black;
+}
+.vcenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	resize: vertical;
+}
+.menu {
+	margin: 0;
+	padding: 0;
+	width: 306px;
+}
+.panel {
+	display: inline-block;
+}
+.menu .panel {
+	width: 306px !important;
+	border-radius: 0 !important;
+}
+.main {
+	margin-left: 0;
+	margin-right: 0;
+}
+.float {
+	position: relative;
+	right: 0;
+	top: 60px;
+	bottom: 0;
+}
+.fixed {
+	position: fixed
+}
+.affix {
+}
+/*
+.boards {
+	display: flex;
+	align-items: center;
+}
+.menu {
+	float: right;
+	height: 100%;
+}
+
+.panel {
+	display: inline-block;
+	width: 100%;
+}
+
+.panels {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.panels > div {
+	float: left;
+}
+
+.menu .panel-body {
+	display: block;
+	height: 100% !important;
+	margin: 0px;
+}
