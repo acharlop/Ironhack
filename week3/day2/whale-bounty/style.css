@@ -1,0 +1,112 @@
+body {
+    background-color: #F5F5F5;
+    font-family: "Roboto";
+}
+
+a {
+    text-decoration: none;
+    color: #237FD6 !important;
+}
+/* 
+    BS class changes
+*/
+.panel-heading {
+    background-color: white !important;
+    border-bottom: 1px solid rgba(221,221,221,.4) !important;
+}
+
+.panel-heading img {
+    margin: 5px;
+}
+
+.panel-title {
+    display: inline;
+    margin-left: 5px;
+}
+
+.panel-default {
+    border: 1px solid rgba(221,221,221,.4);
+}
+/*
+    New styles
+    Bounty
+*/
+.bounty {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.bounty img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+
+/* New styles for panel pre header */
+
+.panel-pre-header {
+    font-size: 13px;
+    color: #8D8D8D;
+}
+.panel-pre-header img {
+    border-radius: 50%;
+    margin: 0 10px 10px 0;
+}
+/* bounty details */
+
+.payment {
+    color: #FAAF5E;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 8px;
+    vertical-align: middle
+}
+
+.glyphicon {
+    vertical-align: baseline;
+    font-weight: normal;
+    font-size: 14px;
+    
+}
+.btn-xs {
+    color: rgb(204, 204, 204);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 7px 3px;
+}
+
+.due{
+    color: red;
+}
+
+/* description */
+.description {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+
+/* comment section and icon */
+.comment {
+    margin-bottom: 10px;
+}
+.comment .-icon {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background-color: #7A7A7A;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+.btn-normal {
+    color: #237FD6;
+    border: 1px solid #237FD6;
+    border-radius: 25px;
+    padding: 6px 25px;
+    font-size: 16px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
