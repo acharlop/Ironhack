@@ -6,3 +6,15 @@ body{
 	justify-content: flex-end;
 	flex-wrap: nowrap;
 }
+._nopadding {
+	padding: 0;
+}
+._fullwidth {
+	width: 100%;
+}
+
+/* FOR TESTING ONLY */
+.jumbotron{
+	border: 1px solid red;
+	background-color: green;
+}
