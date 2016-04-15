@@ -1,7 +1,7 @@
-var question = function (question,answer) {
+var question = function (obj) {
 	this.id = id()
-	this.question = question
-	this.answer = answer
+	this.question = obj.question
+	this.answer = obj.answer
 }
 
 var id = function(){

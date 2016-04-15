@@ -1,0 +1,15 @@
+{
+  "name": "quiz-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "question.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avi",
+  "license": "ISC",
+  "dependencies": {
+    "read": "^1.0.7",
+    "read-file": "^0.2.0"
+  }
+}
