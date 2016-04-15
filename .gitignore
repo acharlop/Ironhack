@@ -2,3 +2,4 @@ current
 .DS_Store
 current/today
 */today
+*/node_modules
