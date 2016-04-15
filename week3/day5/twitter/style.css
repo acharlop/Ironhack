@@ -1,0 +1,8 @@
+body{ 
+	padding-top: 70px; 
+}
+.flex-row {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+}
