@@ -1,5 +1,6 @@
 body{ 
 	padding-top: 70px; 
+	background-color: #F5F8FA;
 }
 .flex-row {
 	display: flex;
@@ -14,7 +15,6 @@ body{
 }
 
 /* FOR TESTING ONLY */
-.jumbotron{
+.left-column{
 	border: 1px solid red;
-	background-color: green;
 }
