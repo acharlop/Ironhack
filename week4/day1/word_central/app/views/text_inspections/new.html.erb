@@ -1,0 +1,11 @@
+
+<h2>Submit text for inspection</h2>
+
+<%= form_tag("/text_inspections", method: "POST") do %>
+<div>
+	<%= label_tag(:text_inspection_user_text, "Text") %>
+	<%= text_area_tag(:text_inspection_user_text) %>
+	</div>
+	<%= submit_tag("Submit text") %>
+<% end %>
+

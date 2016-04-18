@@ -1,0 +1,9 @@
+<h2><%= @word_count %> words would take you<br>
+<%= @minutes %>:<%= @seconds %> minutes to read</h2>
+<ul>
+	<li><%= link_to "home", root_path %></li>
+	<li><%= link_to "new word count", "/text_inspections/new" %></li>
+</ul>
+
+<h2>Text submited</h2>
+<p><%= @text %></p>
