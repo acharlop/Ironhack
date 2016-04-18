@@ -5,7 +5,7 @@
 	<li><%= link_to "new word count", "/text_inspections/new" %></li>
 </ul>
 
-<h2>Longest Sentenct</h2>
+<h2>Longest Sentence</h2>
 <p><%= @longest_sentence %>.</p>
 
 <h2>Top 10 most frequent words</h2>
@@ -20,6 +20,22 @@
 		<td><%= idx+1 %>)</td>
 		<td><%= word[0].downcase %></td>
 		<td><%= word[1] %></td>
+	</tr>
+	<% end %>
+</table>
+
+<h2>Top 10 longest words</h2>
+<table>
+	<tr>
+		<th></th>
+		<th>Word</th>
+		<th>Length</th>
+	</tr>
+	<% @longest_words.each_with_index do |word, idx| %>
+	<tr>
+		<td><%= idx+1 %>)</td>
+		<td><%= word.downcase %></td>
+		<td><%= word.length %></td>
 	</tr>
 	<% end %>
 </table>
