@@ -18,6 +18,8 @@ class TextInspectionsController < ApplicationController
 		@longest_sentence = @text.split(".").max
 
 		@longest_words = words.uniq.max_by(10){|w| w.length}.sort_by{|w|-w.length}
+
+		
 		render "results"
 	end
 end

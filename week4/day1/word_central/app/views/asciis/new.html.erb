@@ -1,0 +1,7 @@
+
+
+<%= form_tag("/asciis", method: "POST") do %>
+  <%= label_tag :asciify, "Sentence to Ascii-fy" %><br>
+  <%= text_field_tag :asciify %>
+  <%= submit_tag("Asciify") %>
+<% end %>

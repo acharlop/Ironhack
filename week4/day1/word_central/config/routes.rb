@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'site#home'
+  
   get "/text_inspections/new" => "text_inspections#new"
   post "/text_inspections" => "text_inspections#create"
+
+  get "/asciis/new" => "asciis#new"
+  post "/asciis" => "asciis#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
