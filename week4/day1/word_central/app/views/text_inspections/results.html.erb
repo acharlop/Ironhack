@@ -5,5 +5,21 @@
 	<li><%= link_to "new word count", "/text_inspections/new" %></li>
 </ul>
 
+<h2>Top 10 most frequent words</h2>
+<table>
+	<tr>
+		<th></th>
+		<th>Word</th>
+		<th>Frequency</th>
+	</tr>
+	<% @frequent_words.each_with_index do |word,idx| %>
+	<tr>
+		<td><%= idx+1 %>)</td>
+		<td><%= word[0].downcase %></td>
+		<td><%= word[1] %></td>
+	</tr>
+	<% end %>
+</table>
+
 <h2>Text submited</h2>
 <p><%= @text %></p>
