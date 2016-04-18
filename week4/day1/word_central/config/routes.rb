@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'site#home'
+  get "/text_inspections/new" => "text_inspections#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
