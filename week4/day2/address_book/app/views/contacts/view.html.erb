@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<%= link_to "Back to contacts", "/contacts", class: "btn btn-success" %>
+	</div>	
+</div><br>
+<div class="row">
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+		
+	</div>
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<div class="table-responsive">
+			<table class="table table-hover table-striped"> 
+				<tbody>
+						<tr>
+							<th>Name</th>
+							<td><%= @contact.name %></td>
+						</tr>
+						<tr>
+						 	<th>Address</th>
+							<td><%= @contact.address %></td>
+						</tr>
+						<tr>
+							<th>Phone Number</th>
+							<td><%= @contact.phone %></td>
+						</tr>
+						<tr>
+							<th>Email</th> 
+							<td><%= @contact.email %></td>
+						</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+	</div>
+</div>

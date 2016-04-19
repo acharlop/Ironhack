@@ -10,6 +10,10 @@ class ContactsController < ApplicationController
 		redirect_to :action => "index"
 	end
 
+	def view
+		@contact = Contact.find(params[:id])
+	end
+
 	private
 
 	def contact_params
