@@ -1,0 +1,24 @@
+<div class="table-responsive">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Phone Number</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<% @contacts.each do |contact| %>
+				<tr>
+					<td><%= contact.name %></td>
+					<td><%= contact.address %></td>
+					<td><%= contact.phone %></td>
+					<td><%= contact.email %></td>
+				</tr>
+			<% end %>
+			
+		</tbody>
+	</table>
+</div>
