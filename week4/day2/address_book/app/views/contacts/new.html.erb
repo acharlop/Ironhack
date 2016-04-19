@@ -2,10 +2,10 @@
 	<legend>Add Contact</legend>
 	<%= form_for(@contact) do |f| %>
 	<div class="form-group">
-		<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+		<%= f.text_field :name, class: "form-control", required: true, placeholder: "Name" %>
 	</div>
 	<div class="form-group">
-		<%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+		<%= f.text_field :address, class: "form-control", required: true, placeholder: "Address" %>
 	</div>
 	<div class="form-group">
 		<%= f.text_field :phone, class: "form-control", placeholder: "Phone number", limit: 9 %>

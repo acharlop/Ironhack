@@ -6,8 +6,12 @@ class ContactsController < ApplicationController
 		@contact = Contact.new
 	end
 	def create
-		new_contact = Contact.create(contact_params)
-		redirect_to :action => "index"
+		new_contact = Contact.new(contact_params)
+		if new_contact.phone_valid? && new_contact.save
+			redirect_to :action => "index"
+		else
+			render plain: "nope"
+		end
 	end
 
 	def view
