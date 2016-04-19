@@ -8,7 +8,7 @@
 		<%= f.text_field :address, class: "form-control", placeholder: "Address" %>
 	</div>
 	<div class="form-group">
-		<%= f.number_field :phone, class: "form-control", placeholder: "Phone number" %>
+		<%= f.text_field :phone, class: "form-control", placeholder: "Phone number", limit: 9 %>
 	</div>
 	<div class="form-group">
 		<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
