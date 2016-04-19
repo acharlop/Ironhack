@@ -1,0 +1,18 @@
+<form action="/contacts/create" method="POST" role="form">
+	<legend>Add Contact</legend>
+	<%= form_for(@contact) do |f| %>
+	<div class="form-group">
+		<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+	</div>
+	<div class="form-group">
+		<%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+	</div>
+	<div class="form-group">
+		<%= f.number_field :phone, class: "form-control", placeholder: "Phone number" %>
+	</div>
+	<div class="form-group">
+		<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+	</div>
+	<%= f.submit "Create Contact", class: "btn btn-primary" %>
+	<% end %>
+</form>
