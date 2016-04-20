@@ -2,6 +2,9 @@ class ContactsController < ApplicationController
 	def index
 		@contacts = Contact.all.order(name: :asc)
 	end
+	def favorites
+		@contacts = Contact.where(favorite: true).order(name: :asc)
+	end
 	def new
 		@contact = Contact.new
 	end
@@ -13,6 +16,7 @@ class ContactsController < ApplicationController
 			render plain: "nope"
 		end
 	end
+
 
 	def view
 		@contact = Contact.find(params[:id])
