@@ -1,0 +1,5 @@
+User.create name: "Old Guy", email: "og@perverted.org"
+User.create name: "Quagmire Giggity", email: "pilot@hoponboard.xxx"
+User.create name: "Chris Griffin", email: "chris@mcfatterson.com"
+User.create name: "Meg Ugly", email: "fugly@barf.net"
+User.create name: "Bryan Dog", email: "woof@thunder.qtpie"
