@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # USER ROUTES
-  post "/users/new"         => "users#new"
-  post "/users/create"      => "users#create"
+  get "/users/new"          => "users#new"
+  post "/users"      => "users#create"
   post "/users/:id/destory" => "users#destroy"
-  get  "/users/:id"         => "users#show"
+  get  "/users/:id"         => "users#view"
 
   #
 end
