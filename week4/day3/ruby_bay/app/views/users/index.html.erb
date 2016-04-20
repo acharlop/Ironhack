@@ -1,0 +1,8 @@
+<ul>
+	<% @users.each do |user| %>
+		<li>
+			<strong>Name:</strong> <%= user.name %> 
+			<%= link_to "Details","/users/#{user.id}"  %>
+		</li>
+	<% end %>
+</ul>

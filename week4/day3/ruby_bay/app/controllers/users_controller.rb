@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+	def index
+		@users = User.order(name: :desc).limit(10)
+	end
+
 	def new
 		@user = User.new
 	end
@@ -19,6 +23,6 @@ class UsersController < ApplicationController
 
 	def destroy
 		user = User.destroy params[:id]
-		render :back
+		redirect_to :action => "index"
 	end
 end
