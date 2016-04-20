@@ -16,4 +16,9 @@ class UsersController < ApplicationController
 	def view
 		@user = User.by_id params[:id]
 	end
+
+	def destroy
+		user = User.destroy params[:id]
+		render :back
+	end
 end
