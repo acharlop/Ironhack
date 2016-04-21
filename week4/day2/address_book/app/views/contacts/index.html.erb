@@ -50,6 +50,9 @@
 							<td><%= contact.phone %></td>
 							<td><%= contact.email %></td> -->
 							<td>
+								<%= image_tag contact.avatar.url(:thumb) %>
+							</td>
+							<td>
 								<%= link_to contact.name, "/contacts/view/" << contact.id.to_s, class: "btn btn-default btn-block" %>
 							</td>
 						</tr>

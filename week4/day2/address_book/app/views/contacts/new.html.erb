@@ -13,6 +13,9 @@
 	<div class="form-group">
 		<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
 	</div>
+	<div class="form-group">
+		<%= f.file_field :avatar, as: :file, class: "btn btn-default btn-file"  %>
+	</div>
 	<%= f.submit "Create Contact", class: "btn btn-primary" %>
 	<% end %>
 </form>
