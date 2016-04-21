@@ -31,6 +31,24 @@ class ProductsController < ApplicationController
 		redirect_to :action => "index"
 	end
 
+	def edit
+		@user = User.by_id params[:user_id]
+		@product = @user.products.find params[:id]
+	end
+
+	def update
+		@user = User.by_id params[:user_id]
+		@product = @user.products.find params[:id]
+
+		if @product.update(product_params)
+			flash[:notice] = "Product updated successfully"
+			redirect_to user_product_path
+		else
+			flash[:alert] = "Error updating product"
+			render "edit"
+		end
+	end
+
 	private
 
 	def product_params
