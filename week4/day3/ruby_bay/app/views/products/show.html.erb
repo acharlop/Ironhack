@@ -2,10 +2,7 @@
 <h2><%= @user.name %></h2>
 <p><strong>Description:</strong> <%= @product.description %></p>
 <p><strong>Deadline:</strong> <%= @product.deadline %></p>
-<div>
-	<%= form_tag :action => "destroy" do %>
-	  <%= hidden_field_tag :id, @product.id %>
-	  <%= submit_tag "Delete product" %>
-	<% end %>
-
-</div>
+<br>
+<%= link_to "Back", user_products_path  %>
+<br>
+<%= link_to "Delete product", user_product_path, method: "delete", data: {confirm: "Are you sure?"}  %>
