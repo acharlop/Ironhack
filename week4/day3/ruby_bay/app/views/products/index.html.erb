@@ -1,0 +1,15 @@
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% end %>
+
+<%= link_to "Add new product", new_user_product_path %> &nbsp;&nbsp;&nbsp;
+<%= link_to "Back", users_path  %>
+<ul>
+	<% @products.each do |product| %>
+		<li>
+			<strong>
+				<%= link_to product.title, user_product_path(@user, product)  %>
+			</strong> 
+		</li>
+	<% end %>
+</ul>

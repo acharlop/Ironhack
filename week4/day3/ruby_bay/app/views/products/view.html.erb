@@ -1,0 +1,11 @@
+<h1><%= @product.title %></h1>
+<h2><%= @user.name %></h2>
+<p><strong>Description:</strong> <%= @product.description %></p>
+<p><strong>Deadline:</strong> <%= @product.deadline %></p>
+<div>
+	<%= form_tag :action => "destroy" do %>
+	  <%= hidden_field_tag :id, @product.id %>
+	  <%= submit_tag "Delete product" %>
+	<% end %>
+
+</div>

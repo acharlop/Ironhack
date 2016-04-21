@@ -1,0 +1,17 @@
+<h1><%= @user.name %></h1>
+<p>Email: <%= @user.email %></p>
+
+<div>
+	<%= link_to "Add Product", new_user_product_path(@user) %> &nbsp;&nbsp;&nbsp;
+</div>
+<div>
+	<%= link_to "View My Products", user_products_path(@user) %> &nbsp;&nbsp;&nbsp;
+</div>
+
+<div>
+<%= link_to "Delete user", user_path, method: "delete", data: {confirm: "Are you sure?"} %>
+</div>
+
+<div>
+	<%= link_to "Update user", edit_user_path %>
+</div>

@@ -1,8 +1,16 @@
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<br>
+<% end %>
+
+<%= link_to "Add new user", "/users/new" %>
+
 <ul>
 	<% @users.each do |user| %>
 		<li>
-			<strong>Name:</strong> <%= user.name %> 
-			<%= link_to "Details","/users/#{user.id}"  %>
+			<strong>
+				<%= link_to user.name, user_path(user)  %>
+			</strong>
 		</li>
 	<% end %>
 </ul>

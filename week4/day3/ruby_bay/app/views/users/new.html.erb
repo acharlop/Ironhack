@@ -1,14 +1,2 @@
-<%= form_for @user do |f| %>
-	<div>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
-
-	<div>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
-<% end %>
+<h2>Create New User</h2>
+<%= render "form" %>

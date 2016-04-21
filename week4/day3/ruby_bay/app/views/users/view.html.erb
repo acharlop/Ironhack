@@ -1,9 +1,0 @@
-<h1><%= @user.name %></h1>
-<p>Email: <%= @user.email %></p>
-<div>
-	<%= form_tag :action => "destroy" do %>
-	  <%= hidden_field_tag :id, @user.id %>
-	  <%= submit_tag "Delete user" %>
-	<% end %>
-
-</div>
