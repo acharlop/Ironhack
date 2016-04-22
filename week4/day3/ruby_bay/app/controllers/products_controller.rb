@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
 	def index
-		@user = User.by_id params[:user_id]
-		@products = @user.products.order(title: :desc).limit(10)
+		# if params[:user_id]
+			@user = User.by_id params[:user_id]
+			@products = @user.products.order(title: :desc).limit(10)
+		# else
+		# 	@products = Product.order(title: :desc).limit(10)
+		# end
+
 	end
 
 	def new
@@ -24,6 +29,7 @@ class ProductsController < ApplicationController
 	def show
 		@user = User.by_id params[:user_id]
 		@product = @user.products.find params[:id]
+		@bids = @product.bids.order(created_at: :desc).limit(10)
 	end
 
 	def destroy

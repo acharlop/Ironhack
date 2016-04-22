@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421223214) do
+ActiveRecord::Schema.define(version: 20160422000655) do
 
   create_table "bids", force: :cascade do |t|
     t.decimal  "amount",     precision: 8, scale: 2
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160421223214) do
     t.datetime "updated_at", null: false
     t.string   "name"
     t.string   "email"
+    t.text     "password"
   end
 
 end

@@ -1,0 +1,10 @@
+<% if @product.active? %>
+	<%= form_for [@product, Bid.new], :url => product_bids_path(@product) do |f| %>
+	  <%= f.label :amount %>
+	   $<%= f.number_field :amount %>
+
+		<%= submit_tag "Bid" %>
+
+	<% end %>
+
+<% end %>

@@ -4,4 +4,9 @@ class Product < ActiveRecord::Base
 	validates :title, presence: true
 	validates :deadline, presence: true, :timeliness => {:after => lambda {Time.now}, :type => :datetime}
 	scope :by_id, ->(id) { find_by(id: id)}
+
+
+  def active?
+  	deadline > Time.now
+  end
 end

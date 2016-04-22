@@ -1,7 +1,19 @@
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% elsif flash[:error] %>
+	<%= flash[:alert] %>
+<% end %>
+
+
 <h1><%= @product.title %></h1>
 <h2><%= @user.name %></h2>
 <p><strong>Description:</strong> <%= @product.description %></p>
 <p><strong>Deadline:</strong> <%= @product.deadline %></p>
+<br>
+
+<%= render "bids" %>
+<%= render "bid_form" %>
+
 <br>
 <%= link_to "Back", user_products_path  %>
 <br>
