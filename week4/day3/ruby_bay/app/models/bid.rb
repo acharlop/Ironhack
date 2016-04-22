@@ -4,7 +4,7 @@ class Bid < ActiveRecord::Base
   validates :amount, presence: true
   validates :user, presence: true
   validates :product, presence: true
-  
+
   validate :greater_than_price
   after_create :update_product_price
 
@@ -18,6 +18,6 @@ class Bid < ActiveRecord::Base
  	end
 
  	def update_product_price
- 		self.product.price = self.amount
+ 		self.product.update(price: self.amount)
  	end
 end

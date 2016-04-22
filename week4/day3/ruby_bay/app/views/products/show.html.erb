@@ -5,8 +5,8 @@
 <% end %>
 
 
-<h1><%= @product.title %></h1>
-<h2><%= @user.name %></h2>
+<h1><%= @product.title %> <br><%= number_to_currency(@product.price) %></h1>
+<h2>Sold by: <%= @user.name %></h2>
 <p><strong>Description:</strong> <%= @product.description %></p>
 <p><strong>Deadline:</strong> <%= @product.deadline %></p>
 <br>
