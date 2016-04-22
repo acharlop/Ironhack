@@ -9,4 +9,8 @@ class Product < ActiveRecord::Base
   def active?
   	deadline > Time.now
   end
+
+  def winner
+  	bids.last.user
+  end
 end

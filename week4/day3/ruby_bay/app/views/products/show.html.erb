@@ -1,6 +1,6 @@
 <% if flash[:notice] %>
 	<%= flash[:notice] %>
-<% elsif flash[:error] %>
+<% elsif flash[:alert] %>
 	<%= flash[:alert] %>
 <% end %>
 
@@ -12,7 +12,12 @@
 <br>
 
 <%= render "bids" %>
-<%= render "bid_form" %>
+<% if @product.active? %>
+	<%= render "bid_form" %>
+<% else %>
+	<h2>Winner: <%= @product.winner.name %></h2>
+<% end %>
+
 
 <br>
 <%= link_to "Back", user_products_path  %>

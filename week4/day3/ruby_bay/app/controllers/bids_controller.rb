@@ -13,7 +13,7 @@ class BidsController < ApplicationController
 		if bid.save
 			flash[:notice] = "Bid entered successfully"
 		else
-			flash[:error] = "ERROR: Bid was not created"
+			flash[:alert] = "ERROR: Bid was not created"
 		end
 		redirect_to user_product_path(@user,@product)
 	end
