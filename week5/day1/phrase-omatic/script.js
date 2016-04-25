@@ -62,9 +62,11 @@ $(document).ready(function() {
 	});
 
 	// remove from array / ul on remove click
-	$(".remove").click(function(event) {
+	$("ul").on('click', 'li a', function(event) {
+		event.preventDefault();
 		var li = $(this).parent()
 		remove_phrase(li.index())
 		li.remove()
 	});
+
 });
