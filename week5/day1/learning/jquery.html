@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 50px;">
+      <button class="btn btn-primary hello-button">Do Something</button>
+    </div>
+
+    <p>I like pizza.</p>
+    <h1 id="title">jquery Exercises</h1>
+    <button class="js-tacos">Tacos</button>
+    <button data-action="do stuff">Do stuff</button>
+
+
+    <div class="js-testing"></div>
+
+
+    <div class="container">
+      
+      
+    </div>
+
+    <script type="text/javascript">
+      $('.hello-button').on('click', function () {
+        alert('hello world')
+      })
+
+      $("[data-action~=do]").click(function(event) {
+        /* Act on the event */
+        $(".js-testing").append('<p class="prepend">Prepend me.</p>')
+      });
+      $(".prepend").on("hover", function(event) {
+        /* Act on the event */
+        $(".js-testing").prepend('<p class="prepend">Prepend me.</p>')
+      });
+
+
+
+
+    </script>
+  </body>
+  </html>

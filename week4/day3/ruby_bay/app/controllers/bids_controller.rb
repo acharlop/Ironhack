@@ -1,8 +1,5 @@
 class BidsController < ApplicationController
 	def create
-		p "*" * 50
-		p bid_params
-		p "*" * 50
 		@user = User.by_id session[:current_user_id]
 		@product = @user.products.find params[:product_id]
 		bid = Bid.new(
