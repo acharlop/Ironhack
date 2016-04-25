@@ -54,11 +54,11 @@ $(document).ready(function() {
 	$("form").on('submit', function() {
 		event.preventDefault()
 		var val = $("input").val()
+		$("input").val("")
 
 		new_phrase(val)
 		display_phrase(val)
 
-		$("input").val("")
 	});
 
 	// hide / show phrases list
@@ -76,6 +76,11 @@ $(document).ready(function() {
 		var li = $(this).parent()
 		remove_phrase(li.index())
 		li.remove()
+	});
+
+	$("#input").keyup(function() {
+		var val = $(this).val()
+		$("#adding").text(val)
 	});
 
 });
