@@ -6,11 +6,19 @@ var phrases = [
 	"Sticks and stones can break you face, words can get you the death penalty",
 	"Why oh why didn\'t I take the blue pill?"
 ]
-	 return phrases[Math.floor(Math.random()*phrases.length)]
+	 $("#phrase").text(
+	 	phrases[Math.floor(Math.random()*phrases.length)]
+	 	)
 }
 
 // JQUERY FUNCTIONS
 
 $(document).ready(function() {
-	$("#phrase").text(rand_phrase())
+	rand_phrase()
+
+	$("button").click(function(event) {
+		event.preventDefault()
+		rand_phrase()
+	});
+
 });
