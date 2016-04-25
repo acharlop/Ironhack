@@ -55,6 +55,7 @@ $(document).ready(function() {
 		event.preventDefault()
 		var val = $("input").val()
 		$("input").val("")
+		$("#adding").text("")
 
 		new_phrase(val)
 		display_phrase(val)
