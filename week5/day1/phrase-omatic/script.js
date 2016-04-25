@@ -7,9 +7,9 @@ var phrases = [
 ]
 
 function rand_phrase () {
-	 $("#phrase").text(
-	 	phrases[Math.floor(Math.random()*phrases.length)]
-	 	)
+	var idx = Math.floor(Math.random()*phrases.length)
+	 $("#phrase").text( phrases[idx] )
+	 return idx
 }
 
 function new_phrase (text) {
@@ -25,21 +25,30 @@ function remove_phrase (idx) {
 	phrases.splice(idx, 1)
 }
 
+function toggle_current(idx) {
+	$("li").removeClass('current')
+	$("ul li:nth-child("+idx+")").addClass('current')
+}
+
 // JQUERY FUNCTIONS
 
 $(document).ready(function() {
-	rand_phrase()
 
 	// initial load of phrases into ul
 	phrases.forEach( function(text) {
 		display_phrase(text)
 	})
+	// initial random phrase
+	
 
 	// refresh the phrase
 	$("button").click(function(event) {
 		event.preventDefault()
-		rand_phrase()
+		var idx = rand_phrase() + 1
+		toggle_current(idx)
 	});
+
+	$("button").trigger('click')
 
 	// handle form submition
 	$("form").on('submit', function() {

@@ -8,20 +8,30 @@ p {
 
 ul {
 	list-style-type: none;
+	list-style-position: inside;
 	margin-left: 0;
 	padding-left: 0;
-	display: table;
+	border-collapse: collapse;
+
+}
+#show-list {
+	padding-left: 5px
+}
+li {
+	padding-left: 5px
 }
 
-li {
-	display: table-row;
+.current {
+	border-radius: 5px;
+	border: 1px solid black;
+	padding-right: 10px;
 }
 
 .remove {
 	color: red;
 	text-decoration: none !important;
 	position: absolute;
-	right: 5px;
+	right: 15px;
 	padding-left: 5px;
 	padding-right: 5px;
 }
