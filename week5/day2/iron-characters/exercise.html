@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="exercise.css">
+	<title>Characters</title>
+</head>
+<body>
+	<form class="js-create-new">
+		<div>
+			<input type="text" id="name" placeholder="Name" required>
+		</div>
+		<div>
+			<input type="text" id="occupation" placeholder="Occupation" required>
+		</div>
+		<div>
+			<input type="text" id="weapon" placeholder="Weapon" required>
+		</div>
+		<div>
+			Debt: 
+			<input type="radio" name="debt" value="true" required>True</input>
+			<input type="radio" name="debt" value="false" checked  required>False</input>
+		</div>
+		<div>
+			<button type="submit">Add Character</button>
+		</div>
+	</form>
+
+
+	<ul class="character-list"></ul>
+
+
+
+	<script src="iron_characters.js"></script>
+	<script src="exercise.js"></script>
+</body>
+</html>
