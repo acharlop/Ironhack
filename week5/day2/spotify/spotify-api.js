@@ -9,70 +9,40 @@ function process_tracks(data) {
 	})
 
 	var tag = $(".artist-list")
-	list_to_dom(tag,list)
+	// list_to_dom(tag,list)
+	api.add2dom(tag,list,api.liTracks) 
 }
 
-
-
-function list_to_dom(tag,list) {
-	tag.empty()
-	list.forEach( function(item) {
-		var html = api.liTracks(item)
-		tag.append(html)
+function do_cool_shit (data, type) {
+	var list = []
+	var thumb = "https://placeholdit.imgix.net/~text?txtsize=25&txt=N/A&w=64&h=64"
+	data.forEach( function(item) {
+		if (item.images.length > 0)
+			thumb = item.images[item.images.length -1].url
+		var obj = {
+			name: item.name,
+			type: type
+		}
+		if(type == "tracks") {
+			obj.number = item.track_number
+			obj.url = item.preview_url
+		} else {
+			obj.img = thumb
+			obj.id = item.id
+		}
+		list.push(obj)
 	})
+	return list
 }
 
 
 //
-function process_album (data) {
-	list = []
-	data.items.forEach( function(album) {
-		var thumb = "https://placeholdit.imgix.net/~text?txtsize=25&txt=N/A&w=64&h=64"
-		if (album.images.length > 0)
-			thumb = album.images[album.images.length -1].url
-		list.push({
-			name: album.name,
-			id: album.id,
-			img: thumb
-		})
-	})
-	add_to_dom(".artist-list",list,"albums")
+function process_albums (data) {
+	var type = "albums"
+	data = do_cool_shit(data.items, type)
+	api.add2dom($(".artist-list"), data, api.liAlbums)
+	// add_to_dom(`.artist-list`, data, type)
 }
-
-
-function process_data(data) {
-	list = []
-	data.artists.items.forEach( function(artist, i) {
-		var thumb = "https://placeholdit.imgix.net/~text?txtsize=25&txt=N/A&w=64&h=64"
-		if (artist.images.length > 0)
-			thumb = artist.images[artist.images.length -1].url
-		list.push({
-			name: artist.name,
-			id: artist.id,
-			img: thumb
-		})
-	})
-	add_to_dom(".artist-list",list,"artists")
-}
-
-function add_to_dom(selector, data, type) {
-	var tag = $(selector)
-	tag.empty()
-	type = (type == "artists" ? "searchAlbums" : "searchTracks")
-
-	data.forEach( function(item) {
-		var html = `
-		<li>
-			<a class="js-${item}" href="#" onclick='api.${type}("${item.id}")'>
-				<img class="item-thumb" src=${item.img}> 
-				<h2 class="item-name">${item.name}</h2>
-			</a>
-		</li>
-		`
-		tag.append(html)
-	})		
-}
-
 
 
 
