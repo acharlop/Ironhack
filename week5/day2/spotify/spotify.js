@@ -8,8 +8,14 @@ $(".js-spotify-search-form").on('submit', function(event) {
 	api.searchArtist(term)
 })
 
-$(".js-artists").click(function(event) {
-	console.log("made it")
+$(".artist-list").on('click', '.js-artists', function(event) {
+	var id = $(event.currentTarget).attr('data-target').split("#")[1]
+	// only run if empty
+	if ($("#"+id+" li").length == 0) {
+		api.id = id
+		api.searchAlbums(id)
+	}
+
 });
 
 // 
@@ -19,7 +25,8 @@ function SpotifyAPI() {
 	this.urls = { 
 		artist_url: `${url}/search?type=artist&query=%REPLACE%`,
 		albums_url: `${url}/artists/%REPLACE%/albums/`,
-		tracks_url: `${url}/albums/%REPLACE%/tracks/`
+		tracks_url: `${url}/albums/%REPLACE%/tracks/`,
+		id: ""
 	}
 }
 
@@ -31,7 +38,7 @@ SpotifyAPI.prototype.search = function(url,arg,fn){
 SpotifyAPI.prototype.processAlbums = function(data) {
 	var type = "albums"
 	data = do_cool_shit(data.items, type)
-	this.add2dom($(".artist-list"), data, this.liAlbums)
+	this.add2dom($("#"+this.id+" ul"), data, this.liAlbums)
 }
 
 SpotifyAPI.prototype.processArtists = function(data) {
@@ -70,14 +77,13 @@ SpotifyAPI.prototype.liTracks = function(item){
 SpotifyAPI.prototype.liArtists = function(item){
 	return `
 		<li>
-			<button data-toggle="collapse" data-target="#collapse${item.id}" class="btn btn-default btn-block js-${item.type} text-left" href="#" onclick='api.searchTracks("${item.id}")'>
+			<button data-toggle="collapse" data-target="#${item.id}" class="btn btn-default btn-block js-${item.type} text-left"'>
 				<img class="item-thumb text-left img" src=${item.img}> 
 				<h2 class="item-name">${item.name}</h2>
 				
 			</button>
-				<div id="collapse${item.id}" class="collapse">
-					<h1>It</h1>
-					<h2>Worked</h2>
+				<div id="${item.id}" class="collapse">
+					<ul></ul>
 				</div>
 		</li>
 		`
