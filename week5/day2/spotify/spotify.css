@@ -7,6 +7,7 @@ body {
 }
 .item-name {
 	display: inline;
+	overflow: hidden;
 }
 ul {
 	list-style-type: none;
