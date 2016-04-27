@@ -1,0 +1,14 @@
+body {
+	padding-top: 20px;
+}
+.item-thumb {
+	width: 64px;
+	height: 64px;
+}
+.item-name {
+	display: inline;
+}
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}

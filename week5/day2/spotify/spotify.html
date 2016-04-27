@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="spotify.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<title>Spotify Search</title>
+</head>
+<body>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+			
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<div class="panel panel-default">
+
+					<div class="panel-heading text-center">
+						<h2>Spotify Search</h2>
+					</div>
+
+
+
+					<form class="js-spotify-search-form">
+						<div class="panel-body">
+							<input type="text" name="spotify-search-text" id="input" class="form-control" required>
+						</div>
+						<div class="panel-footer">
+							<button type="submit" class="btn btn-primary">Search</button>
+						</div>
+					</form>
+
+
+
+				</div>
+
+
+				<ul class="artist-list"></ul>
+
+
+
+
+			</div>
+
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+		</div>
+	</div>
+	
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="spotify.js"></script>
+<script src="spotify-api.js"></script>
+</body>
+</html>
