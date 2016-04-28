@@ -15,7 +15,14 @@ $(".artist-list").on('click', '.js-artists', function(event) {
 		api.id = id
 		api.searchAlbums(id)
 	}
+})
 
+$(".artist-list").on('click', '.js-albums', function(event) {
+	event.preventDefault();
+	var id = $(event.currentTarget).attr("id")
+	if(api.id != id) {
+		api.searchTracks(id)
+	}
 });
 
 // 
@@ -50,7 +57,7 @@ SpotifyAPI.prototype.processArtists = function(data) {
 SpotifyAPI.prototype.processTracks = function(data) {
 	var type = "tracks"
 	data = do_cool_shit(data.items, type)
-	this.add2dom($(".artist-list"), data, this.liTracks)
+	this.add2dom($(".track-list"), data, this.liTracks)
 }
 
 SpotifyAPI.prototype.searchArtist = function(arg) {
@@ -62,15 +69,14 @@ SpotifyAPI.prototype.searchAlbums = function(arg) {
 };
 
 SpotifyAPI.prototype.searchTracks = function(arg) {
-	this.search(this.urls.tracks_url, arg, process_tracks)
+	this.search(this.urls.tracks_url, arg, this.processTracks)
 };
 
 SpotifyAPI.prototype.liTracks = function(item){
 	return `
 	<li>
-			<h2 class="item-name">${item.number}: ${item.name}</h2>
+			<h2 class="${item.type}-name">${item.number}: ${item.name}</h2>
 			<audio src="${item.url}" controls></audio>
-		</a>
 	</li>`
 }
 
@@ -78,31 +84,23 @@ SpotifyAPI.prototype.liArtists = function(item){
 	return `
 		<li>
 			<button data-toggle="collapse" data-target="#${item.id}" class="btn btn-default btn-block js-${item.type} text-left"'>
-				<img class="item-thumb text-left img" src=${item.img}> 
-				<h2 class="item-name">${item.name}</h2>
-				
+				<img class="${item.type}-thumb text-left image" src=${item.img}> 
+				<h2 class="${item.type}-name">${item.name}</h2>
 			</button>
-				<div id="${item.id}" class="collapse">
-					<ul></ul>
-				</div>
+			<div id="${item.id}" class="collapse">
+				<ul></ul>
+			</div>
 		</li>
 		`
-
-	// return this.li_multiple(item, "searchAlbums")
 }
 
 SpotifyAPI.prototype.liAlbums = function(item){
-	return this.li_multiple(item, "searchTracks")
-}
-
-SpotifyAPI.prototype.li_multiple = function(item,next){
 	return `
 		<li>
-			<a class="js-${item.type}" href="#" onclick='api.searchTracks("${item.id}")'>
-				<img class="item-thumb" src=${item.img}> 
-				<h2 class="item-name">${item.name}</h2>
-					<ul class="js-${item.type}-list"></ul>
-			</a>
+			<button type="button" class="btn btn-default btn-block js-${item.type}" data-toggle="modal" data-target="#tracks-modal" id="${item.id}">
+				<img class="${item.type}-thumb" src=${item.img}> 
+				<h2 class="${item.type}-name">${item.name}</h2>
+			</button>
 		</li>
 		`
 }

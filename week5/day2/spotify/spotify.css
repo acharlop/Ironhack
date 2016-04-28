@@ -1,11 +1,11 @@
 body {
 	padding-top: 20px;
 }
-.item-thumb {
+.artists-thumb, .album-thumb {
 	width: 64px;
 	height: 64px;
 }
-.item-name {
+.artists-name {
 	display: inline;
 	overflow: hidden;
 }

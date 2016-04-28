@@ -17,8 +17,6 @@ function do_cool_shit (data, type) {
 	var list = []
 	var thumb = "https://placeholdit.imgix.net/~text?txtsize=25&txt=N/A&w=64&h=64"
 	data.forEach( function(item) {
-		if (item.images.length > 0)
-			thumb = item.images[item.images.length -1].url
 		var obj = {
 			name: item.name,
 			type: type
@@ -26,7 +24,10 @@ function do_cool_shit (data, type) {
 		if(type == "tracks") {
 			obj.number = item.track_number
 			obj.url = item.preview_url
+			
 		} else {
+			if (item.images.length > 0)
+				thumb = item.images[item.images.length -1].url
 			obj.img = thumb
 			obj.id = item.id
 		}
