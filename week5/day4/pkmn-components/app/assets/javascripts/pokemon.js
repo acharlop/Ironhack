@@ -9,12 +9,38 @@ PokemonApp.Pokemon.prototype.render = function () {
 
 	var self = this
 
+
+	$.ajax({
+		url: '/api/v2/pokemon-species/' + self.id,
+		success: function(response) {
+			var latest_text, latest_version
+			response.flavor_text_entries.forEach( function(desc) {
+				if(desc.language.name === "en") {
+					var version = desc.version.url.slice(0,-1).split("/").pop()
+					if (latest_text === undefined || version > latest_version) {
+						latest_text = desc.flavor_text
+						latest_version = version
+						
+					}
+				}
+			});
+			$(".js-pkmn-description").text(latest_text)			
+		}
+	})
+	.fail(function(error) {
+		console.log(error);
+	})
+
 	$.ajax({
 		url: "/api/v2/pokemon/" + this.id,
 		success: function (response) {
 			self.info = response
 			console.log("Pokemon info:")
 			console.log(self.info)
+
+			$(".js-pkmn-sprite").attr("src",
+				"http://pokeapi.co/media/sprites/pokemon/" + self.id + ".png"
+				)
 
 			$(".js-pkmn-name").text(self.info.name)
 			$(".js-pkmn-number").text(self.info.id)
@@ -41,6 +67,8 @@ PokemonApp.Pokemon.prototype.render = function () {
 		console.error(error.responseJSON)
 	})
 
+
+	
 }
 
 PokemonApp.Pokemon.idFromUri = function(pokemonUri) {
