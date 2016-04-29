@@ -8,8 +8,10 @@ $(".search-form").on('submit', function(event) {
 		if (data.tracks.items.length > 0){
 
 			var track = data.tracks.items[0]
-			$(".title").text(track.name)
-			$(".author").text(track.artists[0].name)
+			$(".js-title").text(track.name)
+			$(".js-author").text(track.artists[0].name)
+			$(".artist-button").removeAttr('disabled')
+			$(".artist-button").data('artist-id', track.artists[0].id )
 			$("#player").attr('src', track.preview_url)
 			$("#player").load();
 			$("progress").attr('value', 0)
@@ -20,7 +22,9 @@ $(".search-form").on('submit', function(event) {
 			$(".cover img").attr("src",img)
 
 			$(".btn-play").removeClass("disabled")
-			// console.log(track)
+
+			$("#songs").empty()
+			console.log(track)
 		} else {
 			console.error(data)
 		}

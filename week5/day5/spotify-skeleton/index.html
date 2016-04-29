@@ -7,7 +7,7 @@
 	<link rel="icon" href="https://d2c87l0yth4zbw-2.global.ssl.fastly.net/i/_global/favicon.png"
 </head>
 <body>
-	<div class="widget">
+	<div class="widget track-widget">
 		<div class="search-header">
 			<form class="search-form">
 				<input list="songs" id="search" placeholder="Track name" autocomplete="off">
@@ -22,8 +22,8 @@
 		<div class="btn-play disabled"></div>
 
 		<div class="metadata">
-		  <p class="title">Hunger of The Pine</p>
-		  <p class="author">alt-J</p>
+		  <p class="title js-title">Hunger of The Pine</p>
+		  <p class="author js-author">alt-J</p>
 
 		  <div class="seekbar">
 		    <progress value="5" max="5"></progress>
@@ -36,11 +36,41 @@
 
 		<audio id="player" src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
 
+		<div class="artist-info">
+			<button class="artist-button js-bottom-button" data-artist-id="" disabled>More about: <span class="js-author"></span></button>
+		</div>
+
+	</div>
+
+
+
+
+
+
+<div class="widget author-widget">
+		<div class="author-header">
+				<h2 class="js-author author-title"></h2>
+		</div>
+		<div class="artist-cover">
+			<img src="">
+		</div>
+		<div class="top-tracks">
+			<ul class="tracks-list"></ul>
+		</div>
+		<div class="back">
+			<button class="back-button js-bottom-button">Return to: <span class="js-title"></span></button>
+		</div>
+
+	</div>
+
+
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="search.js"></script>
 		<script src="dropdown.js"></script>
+		<script src="artist.js"></script>
 		<script src="script.js"></script>
-	</div>
 
 </body>
 </html>

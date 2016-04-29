@@ -7,10 +7,10 @@ body {
   border-radius: 5px;
   overflow: hidden;
   display: block;
+  background-color: #ccc;
 }
 
 .search-header {
-  background-color: #ccc;
   padding: 5px;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -152,12 +152,12 @@ body {
   width: 100%;
 }
 
-.cover {
+.cover, .artist-cover{
   height: 300px;
   position: relative;
 }
 
-.cover img {
+.cover img, .artist-cover img {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -189,4 +189,75 @@ progress::-webkit-progress-value {
 
 progress::-moz-progress-bar {
   background-color: #45a800;
+}
+
+.artist-info {
+ width: 100%
+}
+
+.js-bottom-button {
+  height: 25px;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  text-align: left;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+}
+
+.js-bottom-button:hover {
+  border: 1px solid black;
+  border-top: 0;
+}
+.js-bottom-button[disabled]:hover {
+  border: none;
+}
+
+.js-bottom-button:active {
+  background-color: #aaa;
+}
+
+
+/* author widget */
+.author-header {
+  text-align: center;
+}
+.author-title {
+  margin: 5px;
+}
+.tracks-list {
+  padding: 10px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.tracks-list li {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.js-top-track {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: #ccc;
+  cursor: pointer;
+  border: 0;
+  font-size: 15px;
+  padding: 0;
+}
+
+.js-top-track:focus {
+  outline: none;
+}
+
+.tracks-list hr {
+  margin: 5px 0;
+}
+.back-button:hover {
+  border-top: 1px solid black;
 }
