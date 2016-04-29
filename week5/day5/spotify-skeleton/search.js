@@ -1,5 +1,7 @@
 $(".search-form").on('submit', function(event) {
 	event.preventDefault();
-	console.log(this)
+	var term = $("#search").val()
+	this.reset();
+	console.log(term)
 	/* Act on the event */
 });
