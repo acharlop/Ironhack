@@ -1,11 +1,9 @@
+
 $(".search-form").on('submit', function(event) {
 	event.preventDefault();
 	var term = encodeURIComponent($("#search").val())
 	this.reset();
-
 	var url = "https://api.spotify.com/v1/search?type=track&q=" + term
-
-
 	$.get(url, function(data) {
 		if (data.tracks.items.length > 0){
 

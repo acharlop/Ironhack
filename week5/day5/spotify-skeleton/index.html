@@ -10,7 +10,9 @@
 	<div class="widget">
 		<div class="search-header">
 			<form class="search-form">
-				<input type="text" id="search" placeholder="Track name" autocomplete="off">
+				<input list="songs" id="search" placeholder="Track name" autocomplete="off">
+				<datalist id="songs">
+				</datalist>
 			</form>
 		</div>
 		<div class="header">
@@ -36,6 +38,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="search.js"></script>
+		<script src="dropdown.js"></script>
 		<script src="script.js"></script>
 	</div>
 
