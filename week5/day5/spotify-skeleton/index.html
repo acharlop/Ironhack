@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Spotify Player</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="https://d2c87l0yth4zbw-2.global.ssl.fastly.net/i/_global/favicon.png"
+</head>
+<body>
+	<div class="widget">
+		<div class="search-header">
+			<form class="search-form">
+				<input type="text" id="search" placeholder="Track name">
+			</form>
+		</div>
+		<div class="header">
+		<!-- Try adding/removing these classes: -->
+		<!-- disabled -->
+		<!-- playing -->
+		<div class="btn-play disabled"></div>
+
+		<div class="metadata">
+		  <p class="title">Hunger of The Pine</p>
+		  <p class="author">alt-J</p>
+
+		  <div class="seekbar">
+		    <progress value="5" max="30"></progress>
+		  </div>
+		</div>
+		</div>
+		<div class="cover">
+		<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+		</div>
+
+		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="search.js"></script>
+		<script src="script.js"></script>
+	</div>
+
+</body>
+</html>
