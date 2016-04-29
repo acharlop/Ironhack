@@ -10,6 +10,7 @@ PokemonApp.Pokemon.prototype.render = function () {
 	var self = this
 
 
+	// description from latest version
 	$.ajax({
 		url: '/api/v2/pokemon-species/' + self.id,
 		success: function(response) {
@@ -23,7 +24,7 @@ PokemonApp.Pokemon.prototype.render = function () {
 						
 					}
 				}
-			});
+			})
 			$(".js-pkmn-description").text(latest_text)			
 		}
 	})
@@ -31,6 +32,7 @@ PokemonApp.Pokemon.prototype.render = function () {
 		console.log(error);
 	})
 
+	// rest of details per page
 	$.ajax({
 		url: "/api/v2/pokemon/" + this.id,
 		success: function (response) {
@@ -58,6 +60,8 @@ PokemonApp.Pokemon.prototype.render = function () {
 			  $(".js-pkmn-types ul").append(`<li>${type.type.name}</li>`)
 			})
 
+			$(".js-pkmn-evolve").data('pkmn-id', self.info.id)
+			console.log($(".js-pkmn-evolve").data('pkmn-id'))
 
 			$(".js-pokemon-modal").modal("show")
 		}
@@ -72,6 +76,7 @@ PokemonApp.Pokemon.prototype.render = function () {
 }
 
 PokemonApp.Pokemon.idFromUri = function(pokemonUri) {
+	// 
 	var uriSegments = pokemonUri.split("/")
 	var secondLast = uriSegments.length - 2
 	return uriSegments[secondLast]

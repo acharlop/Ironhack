@@ -62,6 +62,38 @@
           <dt>Descriptions</dt>
           <dd class="js-pkmn-description"></dd>
         </dl>
+
+        <button class="btn btn-success js-pkmn-evolve" data-pkmn-id="">Evolve</button>
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+
+
+
+
+
+
+<!-- Evolutions view (hidden at first) -->
+<div class="modal fade js-evolve-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title">
+          <span class="js-pkmn-name">Feraligtr</span>
+          <small class="js-pkmn-number">#160</small>
+        </h3>
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <!-- hiding? -->
+        <ul class="js-ev-list"></ul>
       </div><!-- .modal-body -->
 
     </div><!-- .modal-content -->
