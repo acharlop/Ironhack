@@ -10,10 +10,11 @@ function doneTyping () {
 	if (value == "") return
 	var url = "https://api.spotify.com/v1/search?type=track&q=" + value
 	$.get(url, function(data) {
-		// console.log(data)
 		var html = ""
 		data.tracks.items.forEach( function(song) {
-			html += `<option value="${song.name}">Test</option>`
+			html += `<option value="${song.name}">
+									<a href="#">${song.artists[0].name}</a>
+							 </option>`
 		});
 		$("#songs").empty()
 		$("#songs").append(html)
@@ -21,4 +22,10 @@ function doneTyping () {
 	.fail(function(error) {
 		console.log();
 	})  
+	typingTimer = undefined
 }
+
+$("#search").on("input", function(event) {
+	if (typingTimer === undefined)
+		$(".search-form").trigger('submit')	
+});
