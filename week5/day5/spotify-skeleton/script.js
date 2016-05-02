@@ -28,3 +28,7 @@ $("#player").on("ended", function() {
 	$(".btn-play").toggleClass("playing")
 	clearInterval(intervalID)
 })
+
+$("#player").on("interruptbegin", function() {
+	console.log("how rude!")
+})

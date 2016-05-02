@@ -1,0 +1,47 @@
+@-webkit-keyframes spincubespinner {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(180deg); }
+}
+
+@keyframes spincubespinner {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(180deg); }
+}
+.cubespinner {
+  -webkit-animation-name: spincubespinner;
+  function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 5s;
+    animation-name: spincubespinner;
+    animation-timing-function: ease-in-out;
+    /*animation-delay: 1s;*/
+    -webkit-animation-delay: 1s;
+    /*perspective: 600px;*/
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /*-webkit-transform-origin: 60px 60px 0;*/
+    /*-moz-transform-origin: 60px 60px 0;*/
+    /*-ms-transform-origin: 60px 60px 0;*/
+    /*transform-origin: 60px 60px 0;*/
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.reverse {
+  -moz-animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    -o-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+
+.author-widget {
+  -webkit-transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.track-widget {
+  backface-visibility: hidden;
+}

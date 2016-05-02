@@ -1,6 +1,13 @@
 body {
   font-family: "PT Sans", sans-serif;
 }
+.wrapper {
+  position: relative;
+  text-align: center;
+}
+.track-widget {
+  z-index: 2
+}
 .widget {
   width: 300px;
   margin: 10px auto 0;
@@ -8,6 +15,9 @@ body {
   overflow: hidden;
   display: block;
   background-color: #ccc;
+  position: absolute;
+  top: 0;
+  left: 25%;
 }
 
 .search-header {
@@ -260,4 +270,7 @@ progress::-moz-progress-bar {
 }
 .back-button:hover {
   border-top: 1px solid black;
+}
+.author-widget {
+  z-index: 1;
 }

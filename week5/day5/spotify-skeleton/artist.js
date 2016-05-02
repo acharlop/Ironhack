@@ -1,4 +1,7 @@
 $(".artist-button").click(function(e) {
+	$(".wrapper").addClass('cubespinner')
+	
+
 	var $button = $(event.currentTarget)
 	var artistID = $button.data('artist-id')
 	var url = "https://api.spotify.com/v1/artists/" + artistID
