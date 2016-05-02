@@ -14,7 +14,7 @@ class SandwichesController < ApplicationController
 		sandwich = load_sandwich
 		return unless sandwich
 
-		render json: sandwich
+		render json: {sandwich: sandwich, ingredients: sandwich.ingredients}
 	end
 
 	def update
@@ -33,9 +33,6 @@ class SandwichesController < ApplicationController
 		render json: sandwich
 	end
 
-
-
-
 	private
 
 	def load_sandwich
@@ -53,6 +50,5 @@ class SandwichesController < ApplicationController
 		params.require(:sandwich)
 			.permit(:name, :bread_type)
 	end
-
 
 end
