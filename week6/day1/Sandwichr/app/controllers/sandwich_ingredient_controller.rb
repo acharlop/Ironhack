@@ -5,6 +5,8 @@ class SandwichIngredientController < ApplicationController
 		return unless sandwich || ingredient
 
 		sandwich.ingredients.push(ingredient)
+		sandwich.save
+		
 		render json: {sandwich: sandwich, ingredients: sandwich.ingredients}
 	end
 
