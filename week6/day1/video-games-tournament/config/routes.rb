@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :api_tournament, path: '/api/tournaments', constraint: {format: :json}
   get '/' => 'tournaments#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
