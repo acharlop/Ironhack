@@ -69,7 +69,7 @@ SpotifyAPI.prototype.searchAlbums = function(arg) {
 };
 
 SpotifyAPI.prototype.searchTracks = function(arg) {
-	this.search(this.urls.tracks_url, arg, this.processTracks)
+	this.search(this.urls.tracks_url, arg, this.I IprocessTracks)
 };
 
 SpotifyAPI.prototype.liTracks = function(item){
