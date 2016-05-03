@@ -1,0 +1,9 @@
+<h1>Sandwiches</h1>
+
+<ul class="js-sandwich-list">
+	<% @samiches.each do |samich| %>
+		<li>
+			<%= link_to samich.name , sandwich_path(samich)  %>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,9 @@
+<h1>Sandwich Details <%= @samich.name %></h1>
+<%= content_tag :div, "Name: " << @samich.name %>
+
+<%= content_tag :div, "Bread Type: " << @samich.bread_type %>
+
+<%= content_tag :div, "Calories: " << @samich.total_calories.to_s %>
+
+<br>
+<div><%= link_to "Back", sandwiches_path  %></div>
