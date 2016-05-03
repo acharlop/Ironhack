@@ -6,4 +6,12 @@
 <%= content_tag :div, "Calories: " << @samich.total_calories.to_s %>
 
 <br>
+<bold>Ingredients</bold>
+<ul>
+<% @samich.ingredients.each do |ingredient| %>
+	<li><%= ingredient.name %></li>
+<% end %>
+</ul>
+
+<br>
 <div><%= link_to "Back", sandwiches_path  %></div>
