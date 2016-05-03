@@ -3,15 +3,24 @@
 
 <%= content_tag :div, "Bread Type: " << @samich.bread_type %>
 
-<%= content_tag :div, "Calories: " << @samich.total_calories.to_s %>
+<%= content_tag :div, "Calories: " << @samich.total_calories.to_s, class: "total-calories" %>
 
 <br>
 <bold>Ingredients</bold>
-<ul>
+<ul class="ingredients-list">
 <% @samich.ingredients.each do |ingredient| %>
 	<li><%= ingredient.name %></li>
 <% end %>
 </ul>
+
+<%= form_tag("/api/sandwiches/#{@samich.id}/ingredients/add", {:class => "js-add-ingredient"}) do %>
+
+	<%= select_tag "ingredient", options_for_select( @ingredients.collect{ |i| [i.name, i.id] }) %>
+
+	<div>
+		<%= submit_tag "Add to sandwich" %>
+  </div>
+<% end %>
 
 <br>
 <div><%= link_to "Back", sandwiches_path  %></div>

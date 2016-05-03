@@ -10,6 +10,7 @@ class SandwichViewsController < ApplicationController
 			return
 		end
 
+		@ingredients = Ingredient.all
 
 	end
 end
