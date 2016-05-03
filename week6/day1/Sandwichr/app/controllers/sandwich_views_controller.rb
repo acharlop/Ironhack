@@ -1,4 +1,6 @@
 class SandwichViewsController < ApplicationController
+	before_action :authenticate_user!
+
 	def index
 		@samiches = Sandwich.all
 	end

@@ -3,7 +3,7 @@ function buildHtmlSandwich(s) {
 	 ` <li> ${s.name} </li> `)
 }
 
-$(document).on('ready', function() {
+$(document).on('page:load', function() {
 	$(".js-add-ingredient").on('submit', function(event) {
 		event.preventDefault();
 		var form = event.currentTarget
