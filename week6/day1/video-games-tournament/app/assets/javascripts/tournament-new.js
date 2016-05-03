@@ -2,6 +2,11 @@ function showTournamentForm () {
   $('[data-hook~=tourney-form]').removeClass('hidden')
 }
 
+function hideTournamentForm (event) {
+  event.preventDefault()
+  $('[data-hook~=tourney-form]').addClass('hidden')
+}
+
 function createTournament (event) {
   event.preventDefault()
 
