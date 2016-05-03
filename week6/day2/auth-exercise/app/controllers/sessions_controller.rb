@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-	def new
-
-	end
 
 	def create
 		user = User.find_by(email: params[:email])
@@ -9,6 +6,11 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to '/'
 		else
+			if !user 
+				flash[:error] = "Email: \'" << params[:email] << "\'' not found"
+			else
+				flash[:error] = "password is incorrect"
+			end
 			redirect_to "/login"
 		end
 	end
