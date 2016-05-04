@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20160504194636) do
     t.string   "loser_faction"
     t.integer  "duration"
     t.datetime "date"
-    t.integer  "player_id"
     t.integer  "winner_id"
     t.integer  "loser_id"
     t.datetime "created_at",     null: false
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160504194636) do
   end
 
   add_index "matches", ["loser_id"], name: "index_matches_on_loser_id"
-  add_index "matches", ["player_id"], name: "index_matches_on_player_id"
   add_index "matches", ["winner_id"], name: "index_matches_on_winner_id"
 
   create_table "players", force: :cascade do |t|

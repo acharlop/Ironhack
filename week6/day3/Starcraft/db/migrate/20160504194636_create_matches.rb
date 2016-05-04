@@ -5,8 +5,8 @@ class CreateMatches < ActiveRecord::Migration
       t.string :loser_faction
       t.integer :duration
       t.datetime :date
-      t.references :player, :winner, index: true, foreign_key: true
-      t.references :player, :loser, index: true, foreign_key: true
+      t.references :winner, index: true, foreign_key: true
+      t.references :loser, index: true, foreign_key: true
 
       t.timestamps null: false
     end

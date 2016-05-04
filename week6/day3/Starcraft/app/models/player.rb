@@ -1,4 +1,5 @@
 class Player < ActiveRecord::Base
-	belongs_to :winner, class_name: :match
-	belongs_to :loser, class_name: :match
+	has_many :winning_matches, class_name: "Match", foreign_key: :winner_id
+	has_many :losing_matches, class_name: "Match", foreign_key: :winner_id
+	# has_many :blahs, class_name: :blah, foreign_key: :blah_id
 end
