@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  scope "/api" do
-    # get "/matches/index" => "matches#index", as: matches
-    resources :matches
-  end
+  resources :tasks
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
